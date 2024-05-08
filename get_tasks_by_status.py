@@ -1,7 +1,8 @@
 import sqlite3
-from connect import create_connection, database  
-def get_tasks_by_status(conn, status_name):
+from connect import create_connection, database
 
+
+def get_tasks_by_status(conn, status_name):
     cursor = conn.cursor()
     cursor.execute("""
         SELECT * FROM tasks 
@@ -9,6 +10,7 @@ def get_tasks_by_status(conn, status_name):
     """, (status_name,))
     tasks_with_status = cursor.fetchall()
     return tasks_with_status
+
 
 if __name__ == '__main__':
     status_name_to_query = 'new'  # desired status name

@@ -1,8 +1,8 @@
 import sqlite3
-from connect import create_connection, database  
+from connect import create_connection, database
+
 
 def get_task_count_by_status(conn):
-    
     cursor = conn.cursor()
     cursor.execute("""
         SELECT status.name, COUNT(tasks.id) AS task_count
@@ -11,6 +11,7 @@ def get_task_count_by_status(conn):
     """)
     task_counts = cursor.fetchall()
     return task_counts
+
 
 if __name__ == '__main__':
     with create_connection(database) as conn:

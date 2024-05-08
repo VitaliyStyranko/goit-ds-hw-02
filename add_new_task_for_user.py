@@ -1,8 +1,8 @@
 import sqlite3
-from connect import create_connection, database 
+from connect import create_connection, database
+
 
 def add_task_for_user(conn, user_id, title, description, status_id):
-    
     cursor = conn.cursor()
     cursor.execute("""
         INSERT INTO tasks (title, description, status_id, user_id)
@@ -10,6 +10,7 @@ def add_task_for_user(conn, user_id, title, description, status_id):
     """, (title, description, status_id, user_id))
     conn.commit()
     print(f"New task: '{task_title}', title: '{task_description}' added for user id {user_id}")
+
 
 if __name__ == '__main__':
     user_id_to_assign_task = 5  # desired user id

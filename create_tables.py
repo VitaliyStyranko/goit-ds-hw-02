@@ -1,8 +1,8 @@
 from sqlite3 import Error
 from connect import create_connection, database
 
+
 def create_table(conn, create_table_sql):
-  
     try:
         cursor = conn.cursor()
         cursor.execute(create_table_sql)
@@ -44,12 +44,6 @@ with create_connection(database) as conn:
         create_table(conn, sql_create_tasks_table)
         print("Tables created successfully")
     else:
-        print("Error! Cannot create the database connection.")    
-
+        print("Error! Cannot create the database connection.")
 
 conn.close()
-
-
-
-
-    

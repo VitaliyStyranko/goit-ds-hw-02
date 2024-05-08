@@ -1,12 +1,14 @@
 import sqlite3
 from connect import create_connection, database
+
+
 def find_users_by_email(conn, email_pattern):
-    
     cursor = conn.cursor()
     cursor.execute("SELECT id, fullname, email FROM users WHERE email LIKE ?", (email_pattern,))
-    
+
     matching_users = cursor.fetchall()
     return matching_users
+
 
 if __name__ == '__main__':
     email_pattern_to_search = '%@example.net'  # desired user email
