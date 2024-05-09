@@ -1,8 +1,8 @@
 import sqlite3
-from connect import create_connection, database 
+from connect import create_connection, database
+
 
 def get_users_and_tasks_in_progress(conn):
-    
     cursor = conn.cursor()
     cursor.execute("""
         SELECT users.fullname, tasks.title
@@ -13,6 +13,7 @@ def get_users_and_tasks_in_progress(conn):
     """)
     users_and_tasks_in_progress = cursor.fetchall()
     return users_and_tasks_in_progress
+
 
 if __name__ == '__main__':
     with create_connection(database) as conn:
