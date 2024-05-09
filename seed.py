@@ -50,7 +50,7 @@ if __name__ == '__main__':
         generate_data(conn)
         print(f"Database '{database}' successfully populated with seed data.")
                    
-conn.close()
+
 
 
 

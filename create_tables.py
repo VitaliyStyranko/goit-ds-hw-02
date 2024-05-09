@@ -46,4 +46,3 @@ with create_connection(database) as conn:
     else:
         print("Error! Cannot create the database connection.")
 
-conn.close()
